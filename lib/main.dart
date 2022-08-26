@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         ..changeFavLocation(fromShared: favLocation)
         ..getCurrentWeatherData()
         ..getFiveDaysWeatherForecastData()
-        ..getOtherLocations(),
+        ..getOtherCities(),
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
         builder: (context, state) {

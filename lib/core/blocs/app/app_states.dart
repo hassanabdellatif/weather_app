@@ -12,3 +12,5 @@ class FiveDayWeatherForecastDataLoaded extends AppStates {}
 class ArabCitiesLoaded extends AppStates {}
 
 class AppThemeModeChangeState extends AppStates {}
+
+class FavLocationChangeState extends AppStates {}

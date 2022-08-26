@@ -47,10 +47,10 @@ class AppCubit extends Cubit<AppStates> {
     );
   }
 
-  void getOtherLocations() {
+  void getOtherCities() {
     List<String> cities = ['Cairo', 'Riyadh', 'Abu Dhabi', 'Rabat'];
-    for (var element in cities) {
-      WeatherWebService(cityName: element).getCurrentWeatherData(
+    for (var cityName in cities) {
+      WeatherWebService(cityName: cityName).getCurrentWeatherData(
         onSuccess: (data) {
           arabCities.add(data);
           emit(ArabCitiesLoaded());
@@ -79,12 +79,12 @@ class AppCubit extends Cubit<AppStates> {
   void changeFavLocation({String? fromShared}) {
     if (fromShared != null) {
       favLocation = fromShared;
-      emit(AppThemeModeChangeState());
+      emit(FavLocationChangeState());
     } else {
       favLocation = cityName!;
       CacheHelper.setFavLocation(key: "favLocation", value: favLocation)
           .then((value) {
-        emit(AppThemeModeChangeState());
+        emit(FavLocationChangeState());
       });
     }
   }
